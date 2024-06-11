@@ -17,7 +17,7 @@ resource "aws_lb" "nlb" {
   }
 }  
 
-#3 Assign an Elastic IP (EIP)
+#3 Assign anElastic IP (EIP)
 resource "aws_eip" "eip" {
   vpc = true
 }
@@ -32,9 +32,9 @@ resource "aws_lb_target_group" "tg" {
 
 #3 Create NLB Listeners
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.nlb.arn
-  port              = 80
-  protocol          = "TCP"
+  load_balancer_arn  = aws_lb.nlb.arn
+  port               = 80
+  protocol           = "TCP"
 
   default_action {
     type             = "forward"

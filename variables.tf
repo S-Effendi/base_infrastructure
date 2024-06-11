@@ -1,8 +1,9 @@
 variable "region" {
-  type        = string
+  description = "AWS region"
   default     = "af-south-1"
-  validation {
-    condition     = contains(["eu-west-1", "af-south-1"], var.region)
-    error_message = "Please use af-south-1 to avoid unwanted costs"
-  }
+}
+
+variable "vpc_cidr_block" {
+  description = "CIDR block for VPC"
+  default     = "10.0.0.0/16"
 }
